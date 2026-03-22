@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style>
+        label, button {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="contactForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required maxlength="256">
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required maxlength="356">
+        <br><br>
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required maxlength="500"></textarea>
+        <br><br>
+        <button type="submit">Enviar</button>
+
+    </form>
+<script src="script_form.js"></script>
+</body>
+</html>

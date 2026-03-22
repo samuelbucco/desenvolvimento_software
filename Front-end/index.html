@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>João</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+        <h1>João</h1>
+        <nav> <!-- Seçao de navegaçao do site -->
+            <ul>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="https://www.google.com.br" target="_blank">Google</a></li>
+                <li>Teste</li>
+            </ul>
+        </nav> 
+    </header>
+    <main>
+        <section id="sobre">
+            <h2 class="titulo2">Sobre mim</h2>
+            <img src="sobre_mim_new.png" alt="Imagem de João" title="Imagem do perfil"/>
+            <article>
+                <p>Meu nome é João, tenho 25 anos e sou um desenvolvedor web apaixonado por criar experiências digitais incríveis. Com uma sólida formação em ciência da computação e anos de experiência prática, tenho trabalhado em diversos projetos que vão desde sites corporativos até aplicações web complexas. Minha paixão pela tecnologia me impulsiona a aprender constantemente e a me manter atualizado com as últimas tendências do setor. Estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente e contribuir para o sucesso dos projetos em que estou envolvido.</p> <br>
+                <a href="https://br.linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="#">Teste</a>
+            </article>
+            <aside>
+                <h3 class="titulo3">Habilidades</h3>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </aside>
+        </section>
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <article>
+                <h3>Portfólio</h3>
+                <p>Este é um resumo dos meus projetos mais recentes:</p>
+                <ul>
+                    <li>Projeto 1</li>
+                    <li>Projeto 2</li>
+                    <li>Projeto 3</li>
+                </ul>
+            </article>
+        </section>
+        <section id="habilidades">
+            <h2>Habilidades e tecnologias</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Habilidade</th>
+                        <th>Nível</th>
+                        <th>Descrição</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Avançado</td>
+                        <td>Experiência sólida na criação de estruturas semânticas e acessíveis para websites.</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>Avançado</td>
+                        <td>Experiência sólida na criação de estilos e layouts responsivos para websites.</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Intermediário</td>
+                        <td>Conhecimento em programação orientada a objetos e manipulação do DOM.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+        <footer>
+            <p>Direitos reservados a João</p>
+            <section id="contato">
+                <h2>Contato</h2>
+                <p>Tem um projeto em mente? Entre em contato comigo!</p>
+                <address>
+                    E-mail: <a href="mailto:joao@joao.com.br">joao@joao.com.br</a> <br>
+                    Telefone: <a href="tel:(11) 99999-9999">(11) 99999-9999</a> <br> <br>
+                </address>
+                <form action="" id="form" name="form">
+                    <label for="nome">Nome completo: </label>
+                    <input type="text" id="nome" name="nome" required> <br> <br>
+
+                    <label for="email">E-mail: </label>
+                    <input type="email" id="email" name="email" required> <br> <br>
+
+                    <label for="telefone">Telefone: </label>
+                    <input type="tel" id="telefone" name="telefone"> <br> <br>
+
+                    <label for="idade">Idade: </label>
+                    <input type="number" id="idade" name="idade" min="0"> <br> <br>
+
+                    <label for="materia">Qual matéria você está se candidatando para lecionar? </label>
+                    <input type="radio" id="matematica" name="materia" value="matematica">
+                    <label for="matematica">Matemática</label>
+                    <input type="radio" id="portugues" name="materia" value="portugues">
+                    <label for="portugues">Português</label>
+                    <input type="radio" id="ciencias" name="materia" value="ciencias">
+                    <label for="ciencias">Ciências</label>
+
+                    <br> <br>
+
+                    <label for="escolaridade">Nível de escolaridade: </label>
+                    <select name="escolaridade" id="escolaridade" required>
+                        <option value="superior">Superior completo</option>
+                        <option value="mestrado_incompleto">Cursando mestrado</option>
+                        <option value="mestrado_completo">Mestrado completo</option>
+                        <option value="doutorado_incompleto">Cursando doutorado</option>
+                        <option value="doutorado_completo">Doutorado completo</option>
+                    </select>
+
+                    <br> <br>
+
+                    <label for="mensagem">Descrição sobre si mesmo: </label>
+                    <textarea name="mensagem" id="mensagem" rows="10" cols="30" required></textarea>
+
+                    <br> <br>
+
+                    <input type="checkbox" id="inscricao" name="inscricao">
+                    <label for="inscricao">Desejo receber novidades por e-mail</label>
+
+                    <br> <br>
+
+                    <input type="submit" value="Enviar mensagem">
+
+                </form>
+            </section>
+        </footer>
+    </main>
+  </body>
+</html>
