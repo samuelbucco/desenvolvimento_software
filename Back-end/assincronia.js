@@ -15,6 +15,7 @@ function buscaDadosNoServidor() {
         // Simulação de busca de dados com um atraso
         setTimeout(() => {
             let sucesso = Math.random() > 0.5; // Simula sucesso ou falha aleatoriamente
+            console.log("sucesso: " + sucesso);
             if (sucesso) {
                 resolve("Dados recebidos com sucesso!");
             } else {
@@ -24,12 +25,27 @@ function buscaDadosNoServidor() {
     });
 }
 
-buscaDadosNoServidor()
-    .then((mensagem) => {
-        console.log(mensagem);
-    })
-    .catch((erro) => {
+// buscaDadosNoServidor()
+//     .then((mensagem) => {
+//         console.log(mensagem);
+//     })
+//     .catch((erro) => {
+//         console.error(erro);
+// //     });
+
+// console.log("Execução finalizada.");
+
+
+
+const minhaFuncaoAssincrona = async () => {
+    try {
+        const resultado = await buscaDadosNoServidor();
+        console.log(resultado);
+    } catch (erro) {
         console.error(erro);
-    });
+    }
+};
+
+minhaFuncaoAssincrona();
 
 console.log("Execução finalizada.");
