@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    align-content: space-evenly;
+    gap: 10vh;
+    padding: 10px;
+}
+
+.box {
+    display: flex;
+    height: 20vh;
+    width: 50vh;
+    border: 3px solid black;
+    border-radius: 3px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#box1 {
+    background-color: red;
+}
+
+#box2 {
+    background-color: green;
+}
+
+#box3 {
+    background-color: yellow;
+}
+
+#box4 {
+    background-color: pink;
+}
+
+#box5 {
+    background-color: orange;
+}
