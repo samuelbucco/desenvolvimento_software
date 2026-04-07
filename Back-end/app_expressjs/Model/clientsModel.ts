@@ -1,19 +1,19 @@
 import db from "../db";
-import sequelize from "../db";
+import { DataTypes } from "sequelize";
 
 export default db.define('client', {
     id: {
-        type: sequelize.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER.UNSIGNED,
         autoIncrement: true,
         primaryKey: true,
         allowNull: false
     },
     nome: {
-        type: sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     },
     email: {
-        type: sequelize.STRING,
+        type: DataTypes.STRING,
         allowNull: false
     }
 })
