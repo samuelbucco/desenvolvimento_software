@@ -1,19 +1,24 @@
 import { Request, Response } from "express";
+import { IClients } from "../Model/clients";
+import clientsModel from "../Model/clientsModel";
 
-function index (req: Request, res: Response, next: any) {
-    res.render('index');
+async function index (req: Request, res: Response, next: any) {
+    // res.render('index');
+    const clients = await clientsModel.findAll();
+    res.json(clients);
 }
 
-function orders (req: Request, res: Response, next: any) {
-    res.render('orders');
+function create(req: Request, res: Response, next: any) {
+    res.render('create');    
 }
 
-function users (req: Request, res: Response, next: any) {
-    res.render('users');
+async function store (req: Request, res: Response, next: any) {
+    const clients = req.body as IClients;
+    
+    await clientsModel.create({...clients});
+
+    res.redirect('/');
 }
 
-function products (req: Request, res: Response, next: any) {
-    res.render('products');
-}
 
-export default {index, orders, users, products};
+export default {index, create, store};

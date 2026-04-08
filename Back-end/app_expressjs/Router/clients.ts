@@ -5,10 +5,8 @@ const router = Router();
 
 router.get('/', clientsController.index) 
 
-router.get('/users', clientsController.users);
+router.get('/create', clientsController.create);
 
-router.get('/products', clientsController.products);
-
-router.get('/orders', clientsController.orders);
+router.post('/create', clientsController.store);
 
 export default router;

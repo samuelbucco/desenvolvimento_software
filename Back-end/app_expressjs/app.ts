@@ -1,10 +1,17 @@
 import express from 'express';
 import clientsRouter from './Router/clients';
+import usersRouter from './Router/users';
+import productsRouter from './Router/products';
+import ordersRouter from './Router/orders';
 import db from "./db"
 
 const app = express();
 
+app.use(express.urlencoded({extended: true}));
 app.use(clientsRouter);
+app.use(usersRouter);
+app.use(productsRouter);
+app.use(ordersRouter);
 app.set('view engine', 'pug');
 app.set('views', './Views');
 
