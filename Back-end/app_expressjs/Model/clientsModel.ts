@@ -3,7 +3,7 @@ import { DataTypes } from "sequelize";
 
 export default db.define('client', {
     id: {
-        type: DataTypes.INTEGER.UNSIGNED,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
         allowNull: false

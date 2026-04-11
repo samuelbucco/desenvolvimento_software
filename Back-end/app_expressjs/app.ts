@@ -7,6 +7,7 @@ import db from "./db"
 
 const app = express();
 
+app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(clientsRouter);
 app.use(usersRouter);
