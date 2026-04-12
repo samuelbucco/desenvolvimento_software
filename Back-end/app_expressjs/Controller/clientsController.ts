@@ -20,7 +20,7 @@ async function index (req: Request, res: Response, next: any) {
 
     const clients = await clientsModel.findAll({ where });
 
-    res.render('clients/index', { clients });
+    res.render('clients/index', { clients, search });
 }
 
 async function show (req: Request, res: Response, next: any) {

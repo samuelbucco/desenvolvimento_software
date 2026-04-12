@@ -1,14 +1,45 @@
-h1 Página Inicial
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Clientes
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css')
 
-form(method='GET' action='/clients')
-  input(type='text', name='search', placeholder='Buscar cliente...')
-  button(type='submit') Buscar
+  body
+    .container.mt-4
+      h1 Lista de Clientes
 
-hr
+      form(method='GET' action='/clients' class='form-inline mb-3')
+        input.form-control.w-auto(
+          type='text',
+          name='search',
+          placeholder='Buscar cliente...',
+          value=search
+        )
+        button.btn.btn-primary.ml-2(type='submit') Buscar
 
-if clients.length === 0
-  p Nenhum cliente encontrado
+      div.mt-3.mb-3
+        a.btn.btn-success.mt-3(href='/clients/create') Novo Cliente
 
-ul
-  each client in clients
-    li #{client.nome} - #{client.email}
+      hr
+
+      if clients.length === 0
+        p Nenhum cliente encontrado
+      else
+        table.table.table-striped
+          thead
+            tr
+              th Nome
+              th Email
+              th Ações
+          tbody
+            each client in clients
+              tr
+                td #{client.nome}
+                td #{client.email}
+                td
+                  a.btn.btn-sm.btn-warning.mr-2(href=`/clients/edit/${client.id}`) Editar
+                  a.btn.btn-sm.btn-danger(
+                    href=`/clients/del/${client.id}`
+                    onclick="return confirm('Tem certeza que deseja excluir?')"
+                  ) Deletar
