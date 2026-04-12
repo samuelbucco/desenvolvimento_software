@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-function products (req: Request, res: Response, next: any) {
-    res.render('products');
+function index (req: Request, res: Response, next: any) {
+    res.render('products/index');
 }
 
-export default { products };
+export default { index };

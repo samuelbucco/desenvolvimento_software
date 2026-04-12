@@ -7,8 +7,6 @@ router.get('/', clientsController.index);
 
 router.get('/create', clientsController.create);
 
-router.get('/:id', clientsController.show);
-
 router.post('/create', clientsController.store);
 
 router.post('/edit/:id', clientsController.update);
@@ -16,5 +14,7 @@ router.post('/edit/:id', clientsController.update);
 router.get('/edit/:id', clientsController.edit);
 
 router.get('/del/:id', clientsController.del);
+
+router.get('/:id', clientsController.show);
 
 export default router;

@@ -1,0 +1,14 @@
+h1 Página Inicial
+
+form(method='GET' action='/clients')
+  input(type='text', name='search', placeholder='Buscar cliente...')
+  button(type='submit') Buscar
+
+hr
+
+if clients.length === 0
+  p Nenhum cliente encontrado
+
+ul
+  each client in clients
+    li #{client.nome} - #{client.email}

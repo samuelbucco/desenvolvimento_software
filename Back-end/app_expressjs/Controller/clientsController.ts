@@ -1,11 +1,26 @@
 import { Request, Response } from "express";
 import { IClients } from "../Model/clients";
 import clientsModel from "../Model/clientsModel";
+import { Op } from "sequelize";
+
 
 async function index (req: Request, res: Response, next: any) {
-    // res.render('index');
-    const clients = await clientsModel.findAll();
-    res.json(clients);
+    const { search } = req.query;
+
+    let where = {};
+
+    if (search) {
+        where = {
+            [Op.or]: [
+                { nome: { [Op.iLike]: `%${search}%` } },
+                { email: { [Op.iLike]: `%${search}%` } }
+            ]
+        };
+    }
+
+    const clients = await clientsModel.findAll({ where });
+
+    res.render('clients/index', { clients });
 }
 
 async function show (req: Request, res: Response, next: any) {
@@ -15,7 +30,7 @@ async function show (req: Request, res: Response, next: any) {
 
 async function edit (req: Request, res: Response, next: any) {
     const client = await clientsModel.findByPk(req.params.id as string);
-    res.render('edit', { client: client });
+    res.render('clients/edit', { client: client });
 }
 
 async function update (req: Request, res: Response, next: any) {
@@ -26,7 +41,7 @@ async function update (req: Request, res: Response, next: any) {
             }
         }       
     );
-    res.redirect('/');
+    res.redirect('/clients');
 }
 
 async function del (req: Request, res: Response, next: any) {
@@ -35,11 +50,11 @@ async function del (req: Request, res: Response, next: any) {
             id: req.params.id
         }
     });
-    res.redirect('/');
+    res.redirect('/clients');
 }
 
 function create(req: Request, res: Response, next: any) {
-    res.render('create');    
+    res.render('clients/create');    
 }
 
 async function store (req: Request, res: Response, next: any) {
@@ -50,7 +65,7 @@ async function store (req: Request, res: Response, next: any) {
 
     await clientsModel.create({ ...clients });
 
-    res.redirect('/');
+    res.redirect('/clients');
     
   } catch (error) {
     console.error(error);

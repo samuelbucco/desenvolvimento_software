@@ -9,10 +9,16 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(clientsRouter);
-app.use(usersRouter);
-app.use(productsRouter);
-app.use(ordersRouter);
+
+app.use('/clients', clientsRouter);
+app.use('/users', usersRouter);
+app.use('/products', productsRouter);
+app.use('/orders', ordersRouter);
+
+app.get('/', (req, res) => {
+  res.redirect('/clients');
+});
+
 app.set('view engine', 'pug');
 app.set('views', './Views');
 
