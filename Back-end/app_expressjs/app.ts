@@ -16,7 +16,7 @@ app.use('/products', productsRouter);
 app.use('/orders', ordersRouter);
 
 app.get('/', (req, res) => {
-  res.redirect('/clients');
+  res.redirect('/users');
 });
 
 app.set('view engine', 'pug');
